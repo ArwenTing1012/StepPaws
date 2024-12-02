@@ -1,0 +1,16 @@
+.breed-select-container {
+  position: relative;
+  z-index: 1000;
+}
+
+.breed-select {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+
+.breed-select-options {
+  position: relative;
+  z-index: 1001;
+  background-color: white;
+}

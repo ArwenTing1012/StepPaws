@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 顏色系統 */
+  --primary-gradient-start: #87CEEB;
+  --primary-gradient-end: #90EE90;
+  --glass-overlay: rgba(255,255,255,0.2);
+  --glass-highlight: rgba(255,255,255,0.3);
+  --mood-color: rgba(76,175,80,0.3);
+  --hunger-color: rgba(33,150,243,0.3);
+  --status-color: rgba(139,195,74,0.3);
+  --energy-color: rgba(255,193,7,0.3);
+  --reward-color: rgba(158,158,158,0.3);
+  --text-primary: #2C3E50;
+  --text-secondary: #34495E;
+  --text-disabled: #95A5A6;
+
+  /* 字體系統 */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+  
+  /* 字體大小 */
+  --font-size-xxl: 2rem;    /* 32px */
+  --font-size-xl: 1.5rem;   /* 24px */
+  --font-size-l: 1.25rem;   /* 20px */
+  --font-size-m: 1rem;      /* 16px */
+  --font-size-s: 0.875rem;  /* 14px */
+  --font-size-xs: 0.75rem;  /* 12px */
+
+  /* 間距系統 */
+  --spacing-xxs: 0.25rem;  /* 4px */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-s: 0.75rem;    /* 12px */
+  --spacing-m: 1rem;       /* 16px */
+  --spacing-l: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-xxl: 3rem;     /* 48px */
+
+  /* 圓角系統 */
+  --radius-s: 0.5rem;      /* 8px */
+  --radius-m: 1rem;        /* 16px */
+  --radius-l: 1.5rem;      /* 24px */
+  --radius-full: 9999px;
+}
+
+/* 基礎樣式 */
+@layer base {
+  body {
+    @apply min-h-screen;
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+  }
+}
+
+/* 組件樣式 */
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-lg bg-[var(--glass-overlay)] shadow-lg;
+    border-radius: var(--radius-l);
+    padding: var(--spacing-xl);
+  }
+
+  .form-input {
+    @apply w-full px-[var(--spacing-s)] py-[var(--spacing-xs)];
+    @apply border border-[var(--glass-highlight)] rounded-[var(--radius-s)];
+    @apply bg-white/50 backdrop-blur-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-[var(--primary-gradient-start)];
+  }
+
+  .btn-primary {
+    @apply px-[var(--spacing-l)] py-[var(--spacing-m)];
+    @apply bg-gradient-to-r from-[var(--primary-gradient-start)] to-[var(--primary-gradient-end)];
+    @apply text-white font-medium;
+    @apply rounded-[var(--radius-m)];
+    @apply transition-all duration-300;
+    @apply hover:shadow-lg hover:scale-105;
+  }
+
+  .upload-box {
+    @apply border-2 border-dashed border-[var(--glass-highlight)];
+    @apply rounded-[var(--radius-m)] p-[var(--spacing-l)];
+    @apply backdrop-blur-sm hover:bg-[var(--glass-overlay)];
+    @apply transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-[var(--font-size-xl)] font-semibold;
+    @apply mb-[var(--spacing-l)] text-[var(--text-primary)];
+  }
+
+  .form-label {
+    @apply text-[var(--font-size-m)] text-[var(--text-primary)];
+    @apply mb-[var(--spacing-xs)] block;
+  }
+}
+
+/* 工具類 */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 640px) {
+  :root {
+    --font-size-xxl: 1.75rem;
+    --font-size-xl: 1.25rem;
+    --font-size-l: 1.125rem;
+    --spacing-xxl: 2rem;
+    --spacing-xl: 1.5rem;
+  }
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}

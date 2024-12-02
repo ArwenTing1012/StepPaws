@@ -1,0 +1,242 @@
+/* 全局樣式 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  min-height: 100vh;
+}
+
+/* 頁首樣式 */
+.header {
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* 下載區塊樣式 */
+.download-app-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-prompt {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sub-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.download-button {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #45a049;
+}
+
+.download-path {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* 寵物資料區塊樣式 */
+.pet-info-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pet-type-selection {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.pet-type-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .download-app-section,
+  .pet-info-section {
+    margin: 20px;
+  }
+  
+  .download-button {
+    width: 100%;
+  }
+}
+
+/* 為下拉選單容器添加樣式 */
+.breed-select-container {
+    position: relative;
+    z-index: 1000; /* 確保下拉選單顯示在其他元素上方 */
+  }
+  
+  .breed-select {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  /* 下拉選單選項的樣式 */
+  .breed-select option {
+    background-color: white;
+    z-index: 1000;
+  }
+
+/* 特徵選擇區域的提示文字 */
+.feature-hint {
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  color: #2563EB;
+  margin-bottom: var(--spacing-s);
+  padding: var(--spacing-m);
+  background: #EFF6FF;
+  border-left: 4px solid #2563EB;
+  border-radius: var(--radius-s);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* 特徵圖示樣式 */
+.feature-icon {
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+
+/* 生成按鈕強調樣式 */
+.generate-button {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.generate-button:hover {
+  transform: translateY(-2px);
+}
+
+/* 上傳區域提示文字 */
+.upload-hint {
+  text-align: center;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* 幫助圖示 */
+.help-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  color: #666;
+  cursor: pointer;
+}
+
+.traits-section {
+  margin-bottom: 20px;
+}
+
+.traits-hint {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.hint-icon {
+  margin-right: 8px;
+}
+
+.trait-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.trait-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.trait-item:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.trait-item.selected {
+  background: var(--primary-100);
+  border: 2px solid var(--primary);
+}
+
+.trait-icon {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.trait-text {
+  color: #333;
+}
+
+/* 當checkbox被選中時的樣式 */
+.trait-item input:checked + .trait-icon + .trait-text {
+  font-weight: bold;
+  color: var(--primary);
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="StepPaws.AI 寵物造型師"
+    />
+    <title>StepPaws.AI 寵物造型師</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- 下載 APP 區塊 -->
+      <div class="download-app-section">
+        <div class="download-prompt">
+          💡 提升 3D 模型精準度
+          <div class="sub-text">下載我們的寵物掃描 App，獲得更精準的 3D 模型效果！</div>
+        </div>
+        <a href="/downloads/app" class="download-button">
+          ⬇️ 下載 App
+        </a>
+        <div class="download-path">下載路徑：/downloads/app</div>
+      </div>
+
+      <!-- 寵物基本資料區塊 -->
+      <div class="pet-info-section">
+        // ... 寵物資料相關代碼 ...
+      </div>
+
+      <!-- 特徵選擇區域 -->
+      <div class="traits-section">
+        <!-- 提示文字 -->
+        <div class="traits-hint">
+          <span class="hint-icon">💡</span>
+          每種特徵會影響 3D 模型的行為或背景（請選擇3個）
+        </div>
+        
+        <!-- 性格特徵區域 -->
+        <div class="trait-group">
+          <h3>性格特徵 3/3</h3>
+          <div class="trait-options">
+            <label class="trait-item">
+              <input type="checkbox" name="active">
+              <span class="trait-icon">🏃</span>
+              <span class="trait-text">活潑好動</span>
+            </label>
+            
+            <label class="trait-item">
+              <input type="checkbox" name="playful">
+              <span class="trait-icon">🎾</span>
+              <span class="trait-text">愛玩愛鬧</span>
+            </label>
+            
+            <label class="trait-item">
+              <input type="checkbox" name="smart">
+              <span class="trait-icon">🧠</span>
+              <span class="trait-text">警戒性強</span>
+            </label>
+            <!-- 其他特徵項目 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 照片上傳區域 -->
+      <div class="upload-section">
+        <span class="help-icon" title="查看拍攝建議">❔</span>
+        <div class="upload-area">
+          <!-- 原有的上傳功能 -->
+        </div>
+        <p class="upload-hint">拖曳照片至此或點擊上傳</p>
+      </div>
+
+      <!-- 生成按鈕 -->
+      <button class="generate-button">
+        生成並下載 3D 模型
+      </button>
+    </div>
+  </body>
+</html>
